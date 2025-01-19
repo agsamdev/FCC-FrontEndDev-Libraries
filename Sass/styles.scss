@@ -1,0 +1,74 @@
+// Mixin for box styles
+@mixin box-style($h) {
+    border: 2px solid black;
+    padding: 15px;
+    border-radius: 5px;
+    height: $h;
+}
+
+// 1. Store Data with Sass Variables
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$danger-color: #e74c3c;
+
+// 2. Nest CSS with Sass
+.container {
+    padding: 20px;
+    .title {
+        color: $primary-color;
+        text-align: center;
+    }
+    .box {
+        padding: 15px;
+        border-radius: 5px;
+        margin: 10px 0;
+        // 3. Create Reusable CSS with Mixins
+        @include box-style(20vh);
+    }
+}
+
+// 4. Use @if and @else to Add Logic To Your Styles
+.box {
+    @if $primary-color {
+        background-color: $primary-color;
+    } @else {
+        background-color: $secondary-color;
+    }
+}
+
+// 5. Use @for to Create a Sass Loop
+@for $i from 1 through 3 {
+    .box-#{i} {
+        width: 100px * $i;
+    }
+}
+
+// 6. Use @each to Map Over Items in a List
+$box-types: primary, secondary, danger;
+@each $type in $box-types {
+    .box.#{$type} {
+        background-color: if($type == primary, $primary-color, if($type == secondary, $secondary-color, $danger-color));
+    }
+}
+
+// 7. Apply a Style Until a Condition is Met with @while
+$count: 1;
+@while $count <= 3 {
+    .item-#{$count} {
+        width: 50px * $count;
+    }
+    $count: $count + 1;
+}
+
+// 8. Split Your Styles into Smaller Chunks with Partials
+// This would normally be done by creating separate .scss files and importing them here.
+
+// 9. Extend One Set of CSS Styles to Another Element
+.box {
+    border: 2px solid black;
+}
+
+.box.secondary {
+    @extend .box;
+    border-color: $secondary-color;
+}
