@@ -1,6 +1,8 @@
 
 # SCSS Features Showcase
 
+![](scss-simple-project.png)
+
 This project demonstrates various features of SCSS (Sass) through a simple styling example.
 
 ## Features Implemented
