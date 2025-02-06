@@ -715,6 +715,7 @@ class Navbar extends React.Component {
 ```
 
 ## Pass a Callback as Props
+Passing `this.handleChange` as props to `<GetInput/>` component
 ```jsx
 class MyApp extends React.Component {
   constructor(props) {
