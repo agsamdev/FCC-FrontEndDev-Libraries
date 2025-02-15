@@ -200,6 +200,7 @@ console.log(count);
 ```
 
 ## Combine Multiple Reducers
+As applications grow, their state becomes more complex.  Redux addresses this with reducer composition.  Instead of splitting the state itself, you create multiple reducers, each responsible for a distinct part of the application state, and then combine them into a single root reducer.  The combineReducers() method is used for this, taking an object where keys correspond to slices of state and values are the reducers managing those slices.  The example shows combining authenticationReducer and notesReducer into a rootReducer, resulting in a single state object with auth and notes properties. The exercise asks you to combine counterReducer and authReducer into a rootReducer with keys count and auth respectively.
 ```jsx
 const INCREMENT = 'INCREMENT';
 const DECREMENT = 'DECREMENT';
@@ -241,3 +242,41 @@ Redux.combineReducers({
 
 const store = Redux.createStore(rootReducer);
 ```
+
+## Send Action Data to the Store
+This code demonstrates how to send data along with Redux actions and use that data in a reducer to update the store's state.  The addNoteText() action creator is modified to return an action object with both a type (ADD_NOTE) and a text property (the note data). The notesReducer() is updated to handle the ADD_NOTE action type, extracting the text from the action and using it as the new state.  This allows the Redux store to receive and process data from user interactions.
+```jsx
+const ADD_NOTE = "ADD_NOTE";
+
+const notesReducer = (state = "Initial State", action) => {
+  switch (action.type) {
+    // change code below this line
+
+    case ADD_NOTE:
+      return action.text;
+
+    // change code above this line
+    default:
+      return state;
+  }
+};
+
+const addNoteText = note => {
+  // change code below this line
+
+  return {
+    type: ADD_NOTE,
+    text: note
+  };
+
+  // change code above this line
+};
+
+const store = Redux.createStore(notesReducer);
+
+console.log(store.getState());
+store.dispatch(addNoteText("Hello!"));
+console.log(store.getState());
+```
+
+
