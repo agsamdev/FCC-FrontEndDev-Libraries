@@ -279,4 +279,61 @@ store.dispatch(addNoteText("Hello!"));
 console.log(store.getState());
 ```
 
+## Use Middleware to Handle Asynchronous Actions
+Thunk only intercepts functions: The only thing Thunk intercepts is the function returned by `handleAsync()`.
+Plain objects bypass Thunk: The calls to `dispatch(requestingData())` and `dispatch(receivedData(data))` dispatch plain objects. These objects are not intercepted by Thunk. They go straight to the reducer (or the next middleware in the chain, if any).
+Thunk provides dispatch to the thunk: Thunk's main job is to intercept the thunk function and then call that function, providing it with the dispatch method. This allows the thunk to dispatch regular actions.
+```js
+const REQUESTING_DATA = 'REQUESTING_DATA'
+const RECEIVED_DATA = 'RECEIVED_DATA'
+
+const requestingData = () => { return {type: REQUESTING_DATA} }
+const receivedData = (data) => { return {type: RECEIVED_DATA, users: data.users} }
+
+const handleAsync = () => {
+  return function(dispatch) {
+    // Dispatch request action here
+      dispatch(requestingData());
+
+    setTimeout(function() {
+      let data = {
+        users: ['Jeff', 'William', 'Alice']
+      }
+      // Dispatch received data action here
+      dispatch(receivedData(data));
+
+    }, 2500);
+  }
+};
+
+const defaultState = {
+  fetching: false,
+  users: []
+};
+
+const asyncDataReducer = (state = defaultState, action) => {
+  switch(action.type) {
+    case REQUESTING_DATA:
+      return {
+        fetching: true,
+        users: []
+      }
+    case RECEIVED_DATA:
+      return {
+        fetching: false,
+        users: action.users
+      }
+    default:
+      return state;
+  }
+};
+
+const store = Redux.createStore(
+  asyncDataReducer,
+  Redux.applyMiddleware(ReduxThunk.default)
+);
+```
+
+
+
 
