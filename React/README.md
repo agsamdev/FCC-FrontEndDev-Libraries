@@ -1,7 +1,7 @@
 ```mermaid
 %%{init: {"flowchart": {"htmlLabels": false}} }%%
 flowchart LR
-    first["`Store`"]
+    first["`store`"]
     second["`action`"]
     third["`reducer`"]
     first --> second --> third
