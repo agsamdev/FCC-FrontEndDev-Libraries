@@ -1,3 +1,13 @@
+```mermaid
+%%{init: {"flowchart": {"htmlLabels": false}} }%%
+flowchart LR
+    first["`store`"]
+    second["`action`"]
+    third["`reducer`"]
+    first --> second --> third
+
+```
+
 ## Create a Redux Store
 Redux is a state management framework that can be used with a number of different web technologies, including React.
 In Redux, there is a single state object that's responsible for the entire state of your application. <br>
