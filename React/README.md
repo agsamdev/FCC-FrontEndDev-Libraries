@@ -1,11 +1,34 @@
 ```mermaid
-%%{init: {"flowchart": {"htmlLabels": false}} }%%
-flowchart LR
-    markdown["`This **is** _Markdown_`"]
-    newLines["`Line1
-    Line 2
-    Line 3`"]
-    markdown --> newLines
+graph TD
+    A[Component Created (Mounting)] --> B{constructor()};
+    B --> C{render()};
+    C --> D[DOM Updated];
+    D --> E{componentDidMount()};
+    E --> F[Component Ready];
+
+    F --> G{Props Change?};
+    G -- Yes --> H{shouldComponentUpdate()?};
+    H -- Yes --> I{render()};
+    I --> D;
+    H -- No --> J[No Update];
+
+    F --> K{State Change?};
+    K -- Yes --> L{shouldComponentUpdate()?};
+    L -- Yes --> I;
+    L -- No --> J;
+
+    F --> M[Parent Re-renders];
+    M --> H;
+
+    F --> N[Component Unmounts];
+    N --> O{componentWillUnmount()};
+    O --> P[Component Destroyed];
+
+    J --> F;
+
+    style A fill:#ccf,stroke:#888,stroke-width:2px
+    style P fill:#fcc,stroke:#888,stroke-width:2px
+    style F fill:#cff,stroke:#888,stroke-width:2px
 ```
 
 ## Create a simple JSX element
