@@ -1,3 +1,11 @@
+%%{init: {"flowchart": {"htmlLabels": false}} }%%
+flowchart LR
+    markdown["`This **is** _Markdown_`"]
+    newLines["`Line1
+    Line 2
+    Line 3`"]
+    markdown --> newLines
+
 ## Create a simple JSX element
 One important thing to know about nested JSX is that it must return a single element.
 This one parent element would wrap all of the other levels of nested elements.
