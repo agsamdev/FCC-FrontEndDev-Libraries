@@ -1,7 +1,7 @@
 ```mermaid
 %%{init: {"flowchart": {"htmlLabels": false}} }%%
 flowchart LR
-    first["`Store - The store is the single source of truth for your application's state. `"]
+    first["`Store`"]
     second["`action`"]
     third["`reducer`"]
     first --> second --> third
