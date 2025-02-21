@@ -1,12 +1,3 @@
-```mermaid
-%%{init: {"flowchart": {"htmlLabels": false}} }%%
-flowchart LR
-    first["`store`"]
-    second["`action`"]
-    third["`reducer`"]
-    first --> second --> third
-
-```
 
 ## Create a simple JSX element
 One important thing to know about nested JSX is that it must return a single element.
