@@ -437,17 +437,17 @@ const store = Redux.createStore(immutableReducer);
 ## Copy an Object with Object.assign
 ```js
 const defaultState = {
-  user: 'CamperBot',
-  status: 'offline',
-  friends: '732,982',
-  community: 'freeCodeCamp'
+  user: "CamperBot",
+  status: "offline",
+  friends: "732,982",
+  community: "freeCodeCamp"
 };
 
 const immutableReducer = (state = defaultState, action) => {
-  switch(action.type) {
-    case 'ONLINE':
-      // Don't mutate state here or the tests will fail
-      return
+  switch (action.type) {
+    case "ONLINE":
+      // to enforce state immutability, return a new state object using Object.assign() method
+      return Object.assign({}, state, { status: "online" });
     default:
       return state;
   }
@@ -455,8 +455,8 @@ const immutableReducer = (state = defaultState, action) => {
 
 const wakeUp = () => {
   return {
-    type: 'ONLINE'
-  }
+    type: "ONLINE"
+  };
 };
 
 const store = Redux.createStore(immutableReducer);
