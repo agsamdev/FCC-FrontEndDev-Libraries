@@ -2,16 +2,16 @@
 
 ```mermaid
 graph LR
-    A[Component Action (e.g., button click)] --> B{Action Creator};
-    B --> C[Redux Action (e.g., FETCH_DATA_REQUEST)];
-    C --> D[Redux Middleware (e.g., Redux Thunk, Redux Saga)];
-    D --> E[API Call (e.g., fetch, axios)];
-    E -- Success --> F[Redux Action (e.g., FETCH_DATA_SUCCESS) with payload];
-    E -- Error --> G[Redux Action (e.g., FETCH_DATA_FAILURE) with error];
+    A[Component Action e.g. button click] --> B{Action Creator};
+    B --> C[Redux Action e.g. FETCH_DATA_REQUEST];
+    C --> D[Redux Middleware e.g. Redux Thunk, Redux Saga];
+    D --> E[API Call e.g. fetch, axios];
+    E -- Success --> F[Redux Action e.g. FETCH_DATA_SUCCESS with payload];
+    E -- Error --> G[Redux Action e.g. FETCH_DATA_FAILURE with error];
     F --> H[Redux Reducer];
     G --> H;
     H --> I[Redux Store];
-    I --> J[Component (via connect/useSelector)];
+    I --> J[Component via connect/useSelector];
     J --> K[Component Re-renders with updated data];
 
     subgraph " "
