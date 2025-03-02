@@ -7,7 +7,7 @@ flowchart LR
     fourth["`View (React Components)`"]
     first --> second --> third --> fourth
 ```
-
+```mermaid
 architecture-beta
     group api(cloud)[API]
 
@@ -19,7 +19,7 @@ architecture-beta
     db:L -- R:server
     disk1:T -- B:server
     disk2:T -- B:db
-
+```
 ### 1. Action:
 
     An event occurs in the application (e.g., a button click, an API response).   
