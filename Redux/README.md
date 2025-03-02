@@ -11,8 +11,7 @@ flowchart LR
 ### 1. Action:
 
     An event occurs in the application (e.g., a button click, an API response).   
-
-An action object is created to describe this event. It has a type and optionally a payload.  
+    An action object is created to describe this event. It has a type and optionally a payload.  
 
 ### 2. Dispatch:
 
@@ -29,9 +28,8 @@ An action object is created to describe this event. It has a type and optionally
 ### 5. Store:
 
     The store receives the new state from the reducer.   
-
-The store updates its internal state.  
-The store notifies all subscribed parts of the application that the state has changed.  
+    The store updates its internal state.  
+    The store notifies all subscribed parts of the application that the state has changed.  
 
 ### 6. View (React Components):
 
