@@ -129,6 +129,16 @@ const store = Redux.createStore(messageReducer);
 
 ## Use Provider to Connect Redux to React
 ```jsx
+const Provider = ReactRedux.Provider;
+```
+
+```jsx
+<Provider store={store}>
+  <App/>
+</Provider>
+```
+
+```jsx
 // Redux:
 const ADD = 'ADD';
 
