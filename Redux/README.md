@@ -8,32 +8,32 @@ flowchart LR
     first --> second --> third --> fourth
 ```
 
-Action:
+### 1. Action:
 
     An event occurs in the application (e.g., a button click, an API response).   
 
 An action object is created to describe this event. It has a type and optionally a payload.  
 
-### 1. Dispatch:
+### 2. Dispatch:
 
     The dispatch function is called to send the action to the Redux store.
 
-### 2. Reducer:
+### 3. Reducer:
 
     The store passes the action to the reducer function.   
 
-### 3. The reducer takes the current state and the action as input.  
+### 4. The reducer takes the current state and the action as input.  
 
     Based on the action's type, the reducer creates and returns a new state object.
 
-### 4. Store:
+### 5. Store:
 
     The store receives the new state from the reducer.   
 
 The store updates its internal state.  
 The store notifies all subscribed parts of the application that the state has changed.  
 
-### 5. View (React Components):
+### 6. View (React Components):
 
     React components that are connected to the store receive the updated state.   
 
