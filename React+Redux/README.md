@@ -19,10 +19,11 @@ graph LR
         D -. Asynchronous Operation .-> E
     end
 
-style D fill:#CE93D8,stroke:#90A4AE,stroke-width:2px  /* Light Purple */
-style H fill:#81D4FA,stroke:#90A4AE,stroke-width:2px  /* Light Blue */
-style I fill:#A5D6A7,stroke:#90A4AE,stroke-width:2px  /* Light Green */
-style J fill:#FFB74D,stroke:#90A4AE,stroke-width:2px  /* Light Orange */
+    style D fill:#f9f,stroke:#333,stroke-width:2px
+    style H fill:#ccf,stroke:#333,stroke-width:2px
+    style I fill:#aaf,stroke:#333,stroke-width:2px
+    style J fill:#cff,stroke:#333,stroke-width:2px
+
 ```
 
 ## Getting Started with React Redux
