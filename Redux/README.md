@@ -1,12 +1,45 @@
 ```mermaid
 %%{init: {"flowchart": {"htmlLabels": false}} }%%
 flowchart LR
-    first["`store`"]
-    second["`action`"]
-    third["`reducer`"]
-    first --> second --> third
-
+    first["`Action`"]
+    second["`Dispatch`"]
+    third["`Reducer`"]
+    fourth["`View (React Components)`"]
+    first --> second --> third --> fourth
 ```
+
+Action:
+
+    An event occurs in the application (e.g., a button click, an API response).   
+
+An action object is created to describe this event. It has a type and optionally a payload.  
+
+### 1. Dispatch:
+
+    The dispatch function is called to send the action to the Redux store.
+
+### 2. Reducer:
+
+    The store passes the action to the reducer function.   
+
+### 3. The reducer takes the current state and the action as input.  
+
+    Based on the action's type, the reducer creates and returns a new state object.
+
+### 4. Store:
+
+    The store receives the new state from the reducer.   
+
+The store updates its internal state.  
+The store notifies all subscribed parts of the application that the state has changed.  
+
+### 5. View (React Components):
+
+    React components that are connected to the store receive the updated state.   
+
+The components re-render to reflect the new state.
+
+
 
 ## Create a Redux Store
 Redux is a state management framework that can be used with a number of different web technologies, including React.
