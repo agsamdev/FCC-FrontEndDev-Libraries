@@ -8,18 +8,17 @@ flowchart LR
     first --> second --> third --> fourth
 ```
 ```mermaid
-architecture-beta
-    group api(cloud)[API]
+%%{init: {"flowchart": {"htmlLabels": true}} }%%
+flowchart LR
+    A["<i class='fa fa-bolt'></i> Action<br>(Event)"] --> B["<i class='fa fa-paper-plane'></i> Dispatch<br>(Send Action)"];
+    B --> C["<i class='fa fa-cogs'></i> Reducer<br>(Update State)"];
+    C --> D["<i class='fa fa-database'></i> Store<br>(New State)"];
+    D --> E["<i class='fa fa-desktop'></i> View<br>(React Components)"];
 
-    service db(database)[Database] in api
-    service disk1(disk)[Storage] in api
-    service disk2(disk)[Storage] in api
-    service server(server)[Server] in api
-
-    db:L -- R:server
-    disk1:T -- B:server
-    disk2:T -- B:db
+    classDef iconClass font-awesome;
+    class A,B,C,D,E iconClass;
 ```
+
 ### 1. Action:
 
     An event occurs in the application (e.g., a button click, an API response).   
