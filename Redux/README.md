@@ -1,13 +1,4 @@
 ```mermaid
-%%{init: {"flowchart": {"htmlLabels": false}} }%%
-flowchart LR
-    first["`Action`"]
-    second["`Dispatch`"]
-    third["`Reducer`"]
-    fourth["`View (React Components)`"]
-    first --> second --> third --> fourth
-```
-```mermaid
 %%{init: {"flowchart": {"htmlLabels": true}} }%%
 flowchart LR
     A["<i class='fa fa-bolt'></i> Action<br>(Event)"] --> B["<i class='fa fa-paper-plane'></i> Dispatch<br>(Send Action)"];
