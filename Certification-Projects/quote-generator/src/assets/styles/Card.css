@@ -1,0 +1,71 @@
+.message-box {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 35px 60px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  text-align: center;
+  color: #333;
+  max-width: 500px;
+  margin: 20px auto;
+  position: relative;
+  z-index: 1;
+  transition: background-color 1s ease; /* Add transition */
+  font-family: "Raleway", sans-serif;
+}
+.message-box #author {
+  text-align: right;
+  font-size: 1.5rem;
+}
+.message-box #quote {
+  font-size: 3rem;
+}
+.message-box .quote-container {
+  display: flex;
+  align-items: flex-start;
+}
+.message-box #quotei {
+  vertical-align: middle;
+  margin-top: 20px;
+  font-size: 2.5rem;
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+.button-container .social-media {
+  gap: 1em;
+  display: flex;
+}
+.button-container #twitter {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.button-container #twitter:hover {
+  background-color: #333;
+}
+.button-container #facebook {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.button-container #facebook:hover {
+  background-color: #333;
+}
+.button-container #button {
+  padding: 15px 25px;
+}/*# sourceMappingURL=Card.css.map */
