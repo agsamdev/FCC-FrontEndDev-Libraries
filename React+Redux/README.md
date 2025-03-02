@@ -66,6 +66,7 @@ handleChange(event){
 submitMessage(event){
   event.preventDefault()
     this.setState({
+      input: '',
       submit: this.state.input,
       messages: [...this.state.messages, this.state.input]
     });
