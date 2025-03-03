@@ -3,7 +3,7 @@ import './App.css'
 import ReactMarkDown from 'react-markdown'
 
 function App() {
-    const [markdownText, setMarkdownText] = useState<number>(0); 
+    const [markdownText, setMarkdownText] = useState<number>(); 
 
   return (
     <>
