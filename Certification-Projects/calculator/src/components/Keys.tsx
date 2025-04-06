@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
 import '../assets/Keys.css';
 import Button from './Button';
-import Output from './Output';
 
 interface KeysProps {
   onButtonClick: (value: number | string) => void; // Accept string as well
