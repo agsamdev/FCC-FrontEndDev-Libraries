@@ -1,0 +1,34 @@
+.keys-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  grid-template-rows: repeat(1, 1fr); /* One row for now, will likely need more */
+  gap: 5px;
+  width: 425px;
+  height: 300px;
+  margin: 0 auto;
+  background-color: black;
+  padding: 10px;
+
+  .numbers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2px;
+  
+   
+  }
+  
+  .operators {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1px;
+
+   
+    #clear{
+    background-color: rgb(211, 67, 67);
+    }
+  }
+ 
+}
+
