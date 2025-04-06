@@ -4,9 +4,9 @@ import './App.css';
 import Output from './components/Output';
 
 function App() {
-  const [numbers, setNumbers] = useState<number[]>([0]);
+  const [numbers, setNumbers] = useState<(string | number)[]>([0]);
 
-  const handleButtonClick = (value: number) => {
+  const handleButtonClick = (value: string | number) => {
     setNumbers(prevNumbers => {
       const firstIsZero = prevNumbers.length === 1 && prevNumbers[0] === 0;
       return firstIsZero ? [value] : [...prevNumbers, value];
